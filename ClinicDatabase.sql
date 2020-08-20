@@ -20,8 +20,6 @@ CREATE TABLE courses (
     UNIQUE(fk_department_id)
 );
 
-
-
 CREATE TABLE patients (
     patient_id SERIAL NOT NULL,
     patient_weight VARCHAR(225),
@@ -32,7 +30,6 @@ CREATE TABLE patients (
     Date_taken Date,
     PRIMARY KEY (patient_id)
 );
-
 
 CREATE TABLE students (
     student_id VARCHAR(225),
@@ -91,6 +88,7 @@ CREATE TABLE medicines (
     Quantity BIGINT NOT NULL,
     PRIMARY KEY (medicine_id),
     fk_bundle integer REFERENCES bundles(bundle_id)
+    UNIQUE(fk_bundle)
 );
 
 CREATE TABLE records (
@@ -102,5 +100,8 @@ CREATE TABLE records (
     fk_patient integer REFERENCES patients (patient_id),
     fk_medicine integer REFERENCES medicines(medicine_id),
     fk_account UUID REFERENCES accounts(account_id)
+    UNIQUE(fk_patient),
+    UNIQUE(fk_medicine),
+    UNIQUE(fk_account)
 );
 

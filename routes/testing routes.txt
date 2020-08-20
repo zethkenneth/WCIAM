@@ -1,0 +1,15 @@
+//Dashboard ROutes 
+    
+    /Dashboard/
+    /Dashboard/Inventory
+    /Dashboard/Settings
+    /Dashboard/Records
+
+ //Inventory Routes
+
+    /Inventory/
+    /Inventory/Bundles/
+    /Inventory/Bundles/Medicines/
+    /Inventory/Bundles/Add
+    
+ 
