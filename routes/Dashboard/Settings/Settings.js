@@ -11,10 +11,10 @@ router.get("/", authorize, async (req, res) => {
     }
 });
 
-
 router.use("/courses", require("./Courses"));
 router.use("/units", require("./Units"));
 router.use("/departments", require("./Deparments"));
-router.use("/accounts", require("./Accounts"))
+router.use("/accounts", require("./Accounts"));
+router.use("/logs", require("./Logs"));
 
 module.exports = router;

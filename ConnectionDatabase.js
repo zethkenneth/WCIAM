@@ -5,7 +5,7 @@ const pool = new Pool({
     password: "426813975ujmik,",
     host: "localhost",
     port: 5432,
-    database: "wmsu_clinic_database"
+    database: "wcmai"
 });
  
 module.exports = pool;

@@ -2,18 +2,19 @@ const router = require("express").Router();
 const pool = require("../../../ConnectionDatabase");
 const authorize = require("../../../middleware/authorization");
 
+//get all logs
 router.get("/", async (req, res) => {
     try {
-        res.json("THIS IS THE RECORDS ROUTE!");
+        const logs = await pool.query("SELECT * FROM logs");
+        res.json(logs.rows);
     } catch (error) {
         console.error(error.message);
         res.status(500).send("Server error");
     }
 });
 
-router.use("/employees", require("./Employees"));
-router.use("/students", require("./Students"));
-router.use("/patients", require("./Patients"));
+//search a log
+
 
 
 module.exports = router;

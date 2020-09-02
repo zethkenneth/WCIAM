@@ -15,7 +15,7 @@ router.get("/", authorize, async (req, res) => {
     }
 });
 
-
+router.use("/transactions", require("./Transactions/Transactions"));
 router.use("/settings", require("./Settings/Settings"));
 router.use("/inventory", require("./Inventory/Inventory"));
 router.use("/records", require("./Records/Records"));

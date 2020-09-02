@@ -1,17 +1,24 @@
 const router = require("express").Router();
-const pool = require("../../../ConnectionDatabase");
-const authorize = require("../../../middleware/authorization");
+const pool = require("../../ConnectionDatabase");
+const authorize = require("../../middleware/authorization");
 
-router.get("/", authorize, async (req, res) => {
+
+// get all patients
+router.get("/", async (req, res) => {
     try {
-        res.json("THIS IS THE PATIENTS ROUTE!");
+        const patients = await pool.query("SELECT * FROM patients");
+
+        res.json(patients.rows);
     } catch (error) {
         console.error(error.message);
         res.status(500).send("Server error");
     }
 });
 
-router.use("/employees", require("./Employees"));
-router.use("/students", require("./Students"));
+//search patients
+
+
+
+
 
 module.exports = router;
