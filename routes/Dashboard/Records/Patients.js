@@ -1,6 +1,6 @@
 const router = require("express").Router();
-const pool = require("../../ConnectionDatabase");
-const authorize = require("../../middleware/authorization");
+const pool = require("../../../ConnectionDatabase");
+const authorize = require("../../../middleware/authorization");
 
 
 // get all patients

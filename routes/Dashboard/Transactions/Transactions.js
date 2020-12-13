@@ -29,7 +29,7 @@ router.post("/addtransaction", async (req, res) => {
                 rec_fk_account_id  
               } = req.body
         //2.add a patient
-            const
+        
 
     } catch (error) {
         console.error(error.message);
