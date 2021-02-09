@@ -29,7 +29,6 @@ CREATE TABLE students (
     fk_course_id integer REFERENCES courses (course_id)
     
 );
-/* uuid next employee and student*/
 
 CREATE TABLE employees (
     employee_id VARCHAR(225),
@@ -43,7 +42,6 @@ CREATE TABLE employees (
     
 );
 
-/* by7cryt id */
 CREATE TABLE patients (
     patient_id SERIAL NOT NULL,
     patient_weight VARCHAR(225),

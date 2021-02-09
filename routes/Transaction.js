@@ -1,19 +1,17 @@
 const router = require("express").Router();
-const pool = require("../../../ConnectionDatabase");
-const authorize = require("../../../middleware/authorization");
+const pool = require("../ConnectionDatabase");
 
-//get all logs
+
+
 router.get("/", async (req, res) => {
     try {
-        const logs = await pool.query("SELECT * FROM logs");
-        res.json(logs.rows);
+
+        res.json("This Is the Transaction");
     } catch (error) {
         console.error(error.message);
         res.status(500).send("Server error");
     }
 });
-
-//search a log
 
 
 
